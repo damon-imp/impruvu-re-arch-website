@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0B0B0D">
+<meta name="description" content="Impruvu builds your capital position. A broker gets you funding. We fix the root: credit, debt, structure, cash flow, growth.">
+<meta property="og:title" content="Impruvu - Build Your Capital Position">
+<meta property="og:description" content="A broker just gets you funding. That's a bandaid on a bigger problem. We fix the root.">
+<meta property="og:type" content="website">
+<title>Impruvu - Build Your Capital Position</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#EE6C00; --gold:#FFC40E; --deep:#FF6A00;
+    --navy:#16263F; --ink:#1A1A1A; --paper:#0B0B0D;
+    --card:#15161A; --line:#2A2C33; --muted:#9AA0AA; --soft:#C9CDD4;
+    --grad:linear-gradient(135deg,var(--gold),var(--deep));
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-text-size-adjust:100%}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:#F2F3F5;font-family:"DM Sans","Segoe UI",system-ui,-apple-system,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
+  a{color:inherit;text-decoration:none}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(11,11,13,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .navin{max-width:920px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-weight:800;font-size:20px;letter-spacing:-.5px}
+  .logo span{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .navcta{background:var(--grad);color:#0B0B0D;font-weight:700;font-size:13px;padding:9px 16px;border-radius:999px;white-space:nowrap}
+
+  /* hero */
+  .hero{text-align:center;padding:64px 0 48px}
+  .ey{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:18px}
+  h1{font-size:clamp(30px,8vw,52px);font-weight:800;letter-spacing:-1px;line-height:1.05;margin-bottom:20px}
+  h1 .g{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .lede{font-size:clamp(15px,4vw,19px);color:var(--soft);max-width:620px;margin:0 auto 32px}
+  .cta{display:inline-block;background:var(--grad);color:#0B0B0D;font-weight:800;font-size:16px;padding:16px 34px;border-radius:999px}
+  .cta.ghost{background:transparent;border:1px solid var(--line);color:#F2F3F5;margin-left:10px}
+  .ctarow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .reassure{font-size:12.5px;color:var(--muted);margin-top:16px}
+
+  section{padding:52px 0;border-top:1px solid var(--line)}
+  .sec-ey{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);font-weight:700;margin-bottom:12px;text-align:center}
+  h2{font-size:clamp(24px,6vw,34px);font-weight:800;letter-spacing:-.5px;text-align:center;margin-bottom:14px}
+  .sec-sub{color:var(--muted);text-align:center;max-width:600px;margin:0 auto 36px;font-size:15px}
+
+  /* problem */
+  .problem p{font-size:clamp(16px,4.2vw,20px);color:var(--soft);max-width:640px;margin:0 auto 16px;text-align:center;line-height:1.6}
+  .problem .punch{color:#fff;font-weight:700}
+
+  /* pillars */
+  .pillars{display:grid;grid-template-columns:1fr;gap:12px;margin-top:8px}
+  .pill{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .pill h3{font-size:17px;font-weight:700;margin-bottom:5px}
+  .pill h3 .n{color:var(--orange);font-weight:800;margin-right:8px}
+  .pill p{color:var(--muted);font-size:14px}
+
+  /* how */
+  .steps{display:grid;grid-template-columns:1fr;gap:12px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;position:relative;padding-left:64px}
+  .step .num{position:absolute;left:18px;top:20px;width:32px;height:32px;border-radius:50%;background:var(--grad);color:#0B0B0D;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:16px;font-weight:700;margin-bottom:4px}
+  .step p{color:var(--soft);font-size:14px}
+
+  /* guarantee */
+  .guar{background:linear-gradient(135deg,#16263F,#0e1726);border:1px solid #25405f;border-radius:18px;padding:36px 26px;text-align:center}
+  .guar h2{margin-bottom:14px}
+  .guar p{font-size:clamp(16px,4.4vw,20px);font-weight:600;color:#fff;max-width:620px;margin:0 auto}
+  .guar small{display:block;margin-top:14px;color:var(--soft);font-size:13px;font-weight:400}
+
+  /* final cta */
+  .final{text-align:center;background:radial-gradient(circle at 50% 0%,rgba(255,140,10,.12),transparent 60%)}
+
+  footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--muted);font-size:12.5px}
+  footer .fl{margin-bottom:8px}
+  footer b{color:var(--orange)}
+
+  @media(min-width:720px){
+    .pillars{grid-template-columns:repeat(5,1fr)}
+    .steps{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+<nav><div class="navin">
+  <div class="logo">impru<span>vu</span></div>
+  <a class="navcta" href="#start">Get Your Capital X-Ray</a>
+</div></nav>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="ey">Capital Advisory</div>
+    <h1>A broker just gets you funding.<br><span class="g">We fix the root.</span></h1>
+    <p class="lede">Getting funded is a bandaid on a bigger problem. We build your whole capital position, credit, debt, structure, cash flow, and growth, into something that works for you instead of against you.</p>
+    <div class="ctarow">
+      <a class="cta" href="#start">Get Your Capital X-Ray &middot; $37</a>
+      <a class="cta ghost" href="#how">How it works</a>
+    </div>
+    <p class="reassure">See what your setup costs you every year. Takes minutes. Soft credit check only, no score impact.</p>
+  </header>
+
+  <section class="problem">
+    <div class="sec-ey">The Problem</div>
+    <h2>Making good money. Nothing to show for it.</h2>
+    <p>The revenue is there. But it never turns into what it should. You have wondered if you are just bad with money, or if this is simply what running a business costs.</p>
+    <p class="punch">It is neither. There is a number nobody has ever shown you: what your current setup bleeds every single year.</p>
+    <p>Your CPA files your taxes. Your banker sells you loans. Neither one is watching what your money costs you. That is our job.</p>
+  </section>
+
+  <section>
+    <div class="sec-ey">What We Fix</div>
+    <h2>Five pillars of your capital position</h2>
+    <p class="sec-sub">We score all five, find the leaks, and fix them in the order that wins.</p>
+    <div class="pillars">
+      <div class="pill"><h3><span class="n">1</span>Credit</h3><p>Personal and business credit, repositioned to qualify you for better-priced capital.</p></div>
+      <div class="pill"><h3><span class="n">2</span>Debt</h3><p>High-rate balances, MCAs, and mispriced loans restructured to stop the bleed.</p></div>
+      <div class="pill"><h3><span class="n">3</span>Structure</h3><p>Entities, liability, and banking set up to protect you and unlock options.</p></div>
+      <div class="pill"><h3><span class="n">4</span>Balance</h3><p>Cash flow, reserves, and expenses fixed so the bank account matches the profit.</p></div>
+      <div class="pill"><h3><span class="n">5</span>Grow</h3><p>Idle capital and untapped equity put to work to fund real growth.</p></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="sec-ey">How It Works</div>
+    <h2>Start with the number</h2>
+    <p class="sec-sub">It begins with a Capital X-Ray. In minutes, you see exactly where you stand.</p>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Get your Capital X-Ray</h3><p>A $37 diagnostic scores your five pillars, quantifies your annual bleed, and ranks what to fix first.</p></div>
+      <div class="step"><div class="num">2</div><h3>See your number</h3><p>Your Capital Score, your annual bleed in real dollars, and your ranked leaks, in your portal.</p></div>
+      <div class="step"><div class="num">3</div><h3>Map your fixes on a call</h3><p>A Capital Strategy Call walks your real position and lays out exactly what to fix and in what order.</p></div>
+      <div class="step"><div class="num">4</div><h3>We build the position</h3><p>We execute the moves, in sequence, over 90 or 180 days. You leave with a position that serves you.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="guar">
+      <div class="sec-ey">The Guarantee</div>
+      <h2>You leave better than you came in.</h2>
+      <p>Your savings will be no less than 3x what you invest, and likely far more.</p>
+      <small>If we miss it, you pick the remedy: a full refund, or we work for free until it's true. We can promise that because your X-Ray sizes the savings before we ever make it.</small>
+    </div>
+  </section>
+
+  <section id="start" class="final">
+    <div class="sec-ey">Start Here</div>
+    <h2>See what your setup is costing you.</h2>
+    <p class="sec-sub">The leak doesn't stop while you think about it. Get your Capital X-Ray and see the number today.</p>
+    <div class="ctarow">
+      <a class="cta" href="#">Get Your Capital X-Ray &middot; $37</a>
+    </div>
+    <p class="reassure">100% credited toward your engagement if you move forward.</p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="fl">impru<b>vu</b> &middot; Capital Advisory</div>
+  <div>We don't promise approval amounts. We <b>build</b> positions.</div>
+  <div style="margin-top:10px;font-size:11px;opacity:.7">impruvu.io &middot; &copy; 2026 Impruvu LLC</div>
+</footer>
+</body>
+</html>
